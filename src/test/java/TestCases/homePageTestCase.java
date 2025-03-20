@@ -6,18 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import java.net.URISyntaxException;
 
-public class homePageTestCase {
-    private BaseTest baseTest = new BaseTest();
+public class homePageTestCase extends BaseTest {
 
     @Test
     public void clickNextButton() throws URISyntaxException {
-        baseTest.startAndroidApp(); // Initialize the driver and start the app
-        homePage homePage = new homePage(BaseTest.driver); // Pass the initialized driver to homePage
-        homePage.clickNextButton(); // Interact with the next button
+        homePage.clickNextButton();
     }
 
-    @AfterEach
-    public void tearDown() {
-        baseTest.tearDown(); // Quit the driver after the test
-    }
+
 }

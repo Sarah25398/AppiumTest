@@ -1,13 +1,18 @@
 package TestCases;
 
+import Pages.homePage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -16,20 +21,26 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    public static AndroidDriver driver;
+    public static AndroidDriver driver; // Static to be shared across tests
+    protected homePage homePage;
 
+    @BeforeEach
     public void startAndroidApp() throws URISyntaxException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("appium:automationName", "UiAutomator2");
-        capabilities.setCapability("appium:appPackage", "com.studiobluelime.ecommerceapp");
-        capabilities.setCapability("appium:appActivity", "com.studiobluelime.ecommerceapp.WelcomeActivity");
+        capabilities.setCapability("automationName", "UiAutomator2");
+        capabilities.setCapability("appPackage", "com.studiobluelime.ecommerceapp");
+        capabilities.setCapability("appActivity", "com.studiobluelime.ecommerceapp.WelcomeActivity");
 
         try {
+            // Initialize the AndroidDriver
             driver = new AndroidDriver(new URI("http://127.0.0.1:4723/").toURL(), capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+
+        // Initialize the homePage object with the driver
+        homePage = new homePage(driver);
     }
 
     public void waitForElementToBeVisible(String xpath) {
@@ -51,10 +62,12 @@ public class BaseTest {
         var actualString = driver.findElement(AppiumBy.xpath(xpath)).getText();
         Assert.assertEquals(actualString, content);
     }
-
+    @AfterEach
     public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
     }
+
+
 }
