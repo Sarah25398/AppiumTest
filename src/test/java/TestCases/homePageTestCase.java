@@ -11,6 +11,7 @@ public class homePageTestCase extends BaseTest {
     @Test
     public void clickNextButton() throws URISyntaxException {
         homePage.clickNextButton();
+
     }
 
 

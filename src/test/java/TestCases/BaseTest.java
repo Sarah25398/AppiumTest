@@ -26,15 +26,16 @@ public class BaseTest {
 
     @BeforeEach
     public void startAndroidApp() throws URISyntaxException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("automationName", "UiAutomator2");
-        capabilities.setCapability("appPackage", "com.studiobluelime.ecommerceapp");
-        capabilities.setCapability("appActivity", "com.studiobluelime.ecommerceapp.WelcomeActivity");
+        DesiredCapabilities caps  = new DesiredCapabilities();
+        caps.setCapability("appium:platformName", "Android");
+        caps.setCapability("appium:deviceName", "sdk_gphone64_arm64");  // Change as needed
+        caps.setCapability("appium:appPackage", "com.studiobluelime.ecommerceapp");
+        caps.setCapability("appium:appActivity", ".WelcomeActivity");
+        caps.setCapability("appium:automationName", "UiAutomator2");
 
         try {
             // Initialize the AndroidDriver
-            driver = new AndroidDriver(new URI("http://127.0.0.1:4723/").toURL(), capabilities);
+            driver = new AndroidDriver(new URI("http://0.0.0.0:4723").toURL(), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

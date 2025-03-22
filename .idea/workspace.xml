@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="58fdec50-ff7f-434d-b600-2ecd43f9ec4c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Android/ClothingPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Android/goToHomePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseCommand/commonPageAndroid.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCases/homePageTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCases/homePageTestCase.java" afterDir="false" />
     </list>
@@ -167,7 +170,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Android/goToHomePage.java</url>
-          <line>15</line>
+          <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -177,12 +180,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/Android/goToHomePage.java</url>
-          <line>20</line>
+          <line>18</line>
           <properties class="Android.goToHomePage" method="VerifyHomePageItems">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/TestCases/homePageTestCase.java</url>
+          <line>11</line>
+          <properties class="TestCases.homePageTestCase" method="clickNextButton">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
